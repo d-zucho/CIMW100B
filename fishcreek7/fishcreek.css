@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #5280C5;
+  color: #003366;
+  font-family: Verdana, Arial, sans-serif;
+  margin: 0;
+}
+
+#wrapper {
+  background-color: #F0F0F0;
+  position: relative;
+}
+main {
+  background-color: white;
+  overflow: auto;
+  display: block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+header {
+  background-color: #000066;
+  color: #F0F0F0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: url('./images/lilfish.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1em;
+  text-align: center;
+}
+
+header a {
+  text-decoration: none;
+  color: #F0F0F0;
+}
+
+header a:visited {
+  color: #F0F0F0;
+}
+
+header a:hover {
+  color: #AEC3E3
+}
+
+h1 {
+  font-size: 2em;
+  padding: 0.2em;
+  text-shadow: 1px 1px 1px #CCCCCC;
+}
+
+
+h2 {
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px #777;
+}
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+
+nav li {
+  padding: 0.5em 0;
+  width: 100%;
+  border-bottom: 1px solid #000066;
+}
+
+nav ul a {
+  text-decoration: none;
+}
+nav ul a:link {
+  color: #000066;
+}
+
+nav ul a:visited {
+  color: #5280C5;
+}
+
+nav ul a:hover {
+  color: #3262A3;
+}
+
+/* main {
+  padding: 0 2em;
+} */
+
+
+
+dt {
+  color: #5280C5;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+section {
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding: 0;
+  background-color: #EAEAEA;
+}
+
+section h3 {
+  padding: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 110%;
+  background-color: #AEC3E3;
+}
+
+section p {
+  padding: 0 0.25em 0.25em 0.25em;
+}
+
+
+.category {
+  font-weight: bold;
+  color: #5380C5;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.address {
+  clear: left;
+  margin-bottom: 1rem;
+}
+
+
+
+footer {
+  font-size: 0.7em;
+  font-style: italic;
+  text-align: center;
+  background-color: #AEC3E3;
+  padding: 1em;
+
+
+}
+
+#mobile {
+  display: inline;
+}
+
+#desktop {
+  display: none;
+}
+
+.faq {
+  margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+  header {
+    background-image: url('./images/bigfish.gif');
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+  
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  nav li {
+    border-bottom: none;
+  }
+
+  #flow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  section {
+    min-width: 30%;
+    flex: 1; /* -- This will allocate each section equal areas --*/
+  }
+
+  dl {
+    flex: 2;
+  }
+
+  #dog-patient {
+    flex: 1;
+  }
+
+  #mobile {
+    display: none;
+  }
+
+  #desktop {
+    display: inline;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  
+  @supports (display: grid) {
+    header {
+      grid-area: header;
+    }
+    nav {
+      grid-area: nav;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    footer {
+      grid-area: footer;
+    }
+
+    #wrapper {
+      display: grid;
+      grid-template: 
+          "header header"
+          "nav main"
+          "nav footer"
+          / 180px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      font-weight: bold;
+      font-size: 1.25em;
+    }
+  }
+}
